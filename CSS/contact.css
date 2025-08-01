@@ -1,0 +1,403 @@
+/* Base Styles */
+body.contact-page {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background: linear-gradient(to bottom right, #052e15, #0a1a0f);
+    color: #f3f3f3;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    /* Enable smooth font scaling */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.contact-container {
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 0 16px;
+}
+
+/* Contact Card */
+.contact-card {
+    width: 100%;
+    background: white;
+    color: #333;
+    border-radius: 24px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    padding: 32px;
+    position: relative;
+    overflow: hidden;
+    box-sizing: border-box;
+    max-width: 900px;
+}
+
+/* Glow Effects */
+.glow-effect {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(60px);
+    z-index: 0;
+}
+
+.top-glow {
+    top: -50px;
+    right: -50px;
+    width: 150px;
+    height: 150px;
+    background: radial-gradient(circle, rgba(216, 180, 254, 0.5) 0%, rgba(216, 180, 254, 0) 70%);
+}
+
+.bottom-glow {
+    bottom: -30px;
+    left: -30px;
+    width: 100px;
+    height: 100px;
+    background: radial-gradient(circle, rgba(94, 234, 212, 0.5) 0%, rgba(94, 234, 212, 0) 70%);
+}
+
+/* Header */
+.contact-header {
+    text-align: center;
+    margin-bottom: 40px;
+    position: relative;
+    z-index: 1;
+}
+
+.contact-title {
+    font-size: 2.25rem;
+    font-weight: 700;
+    color: #222;
+    margin: 0;
+}
+
+.contact-subtitle {
+    color: #666;
+    margin-top: 8px;
+    font-size: 1rem;
+}
+
+/* Content Layout */
+.contact-content {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    position: relative;
+    z-index: 1;
+    width: 100%;
+}
+
+/* Split layout on large screens */
+@media (min-width: 1024px) {
+    .contact-content {
+        flex-direction: row;
+    }
+}
+
+/* Form Section */
+.contact-form-section {
+    flex: 1;
+    min-width: 0; 
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-label {
+    font-weight: 500;
+    color: #444;
+    margin-bottom: 8px;
+    font-size: 0.95rem;
+}
+
+.form-input,
+.form-textarea {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    background: #f9f9f9;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+}
+
+.form-input:focus,
+.form-textarea:focus {
+    outline: none;
+    border-color: #9333ea;
+    box-shadow: 0 0 0 2px rgba(147, 51, 234, 0.2);
+    background: white;
+}
+
+.form-textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.submit-btn {
+    margin-top: 8px;
+    padding: 12px 24px;
+    background: linear-gradient(to right, #9333ea, #6b21a8);
+    color: white;
+    font-weight: 700;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.submit-btn:hover,
+.submit-btn:focus {
+    background: linear-gradient(to right, #7e22ce, #581c87);
+    transform: scale(1.02);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    outline: none;
+}
+
+/* Info Section */
+.contact-info-section {
+    flex: 1;
+    background: #f9f9f9;
+    padding: 24px;
+    border-radius: 16px;
+    border: 1px solid #eee;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    min-width: 0; 
+}
+
+/* Text styles in info */
+.info-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 8px;
+}
+
+.info-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+}
+
+.info-icon {
+    padding: 8px;
+    background: #f3e8ff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.icon {
+    width: 20px;
+    height: 20px;
+    fill: #9333ea;
+}
+
+.info-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.info-label {
+    font-weight: 500;
+    color: #444;
+    margin: 0;
+    font-size: 0.95rem;
+}
+
+.info-text {
+    color: #666;
+    margin: 4px 0 0;
+    font-size: 0.95rem;
+}
+
+/* Social Links */
+.social-links {
+    margin-top: 16px;
+}
+
+.social-title {
+    font-weight: 500;
+    color: #444;
+    margin-bottom: 12px;
+    font-size: 0.95rem;
+}
+
+.social-icons {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap; 
+}
+
+.social-icon {
+    padding: 12px;
+    background: #f0f0f0;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.social-icon:hover,
+.social-icon:focus {
+    background: #f3e8ff;
+    outline: none;
+}
+
+.social-icon .icon {
+    fill: #666;
+}
+
+.social-icon:hover .icon,
+.social-icon:focus .icon {
+    fill: #9333ea;
+}
+
+/* Back Button */
+.back-btn-container {
+    margin-top: 40px;
+}
+
+.back-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 24px;
+    border-radius: 9999px;
+    border: 2px solid #4fd1c5;
+    color: #f3f3f3;
+    background: transparent;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    user-select: none;
+}
+
+.back-btn:hover,
+.back-btn:focus {
+    background: #4fd1c5;
+    color: #052e15;
+    outline: none;
+}
+
+.back-icon {
+    width: 16px;
+    height: 16px;
+    fill: currentColor;
+}
+
+/* Responsive Adjustments */
+
+/* Tablets and smaller (up to 768px) */
+@media (max-width: 768px) {
+    .contact-card {
+        padding: 24px;
+    }
+    
+    .contact-title {
+        font-size: 1.75rem;
+    }
+    
+    .contact-subtitle {
+        font-size: 0.9rem;
+    }
+
+    .info-item {
+        gap: 12px;
+    }
+
+    /* Stack form and info on small devices */
+    .contact-content {
+        flex-direction: column;
+    }
+
+    /* Scale inputs and buttons slightly for touch */
+    .form-input,
+    .form-textarea,
+    .submit-btn,
+    .back-btn {
+        font-size: 1.1rem;
+        padding: 14px 20px;
+        border-radius: 16px;
+    }
+
+    /* Larger tappable social icons */
+    .social-icon {
+        padding: 16px;
+    }
+
+    .social-icons {
+        justify-content: center;
+    }
+}
+
+/* Small phones (up to 480px) */
+@media (max-width: 480px) {
+    body.contact-page {
+        padding: 12px;
+    }
+
+    .contact-card {
+        padding: 20px;
+        border-radius: 16px;
+    }
+
+    .contact-title {
+        font-size: 1.5rem;
+    }
+
+    .contact-subtitle {
+        font-size: 0.85rem;
+    }
+
+    .info-title {
+        font-size: 1.25rem;
+    }
+
+    .submit-btn {
+        width: 100%; 
+        padding: 14px 0;
+    }
+
+    .back-btn {
+        width: 100%;
+        justify-content: center;
+        padding: 14px 0;
+        font-size: 1rem;
+    }
+
+    /* Reduce gap in social links */
+    .social-icons {
+        gap: 12px;
+    }
+}
+
+/* Prevent horizontal overflow on really small screens */
+html, body {
+    max-width: 100vw;
+    overflow-x: hidden;
+}
