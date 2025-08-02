@@ -414,3 +414,44 @@ body {
     animation: slideRight 0.8s ease forwards;
     animation-delay: 0.3s;
 }
+
+/* Mobile Optimizations: About Section */
+@media (max-width: 639px) {
+    .about-section {
+        padding: 24px 12px;
+    }
+
+    .about-content-container {
+        gap: 24px;
+    }
+
+    .about-text-content {
+        padding: 0;
+        text-align: center;
+    }
+
+    .profile-image-container {
+        max-width: 280px;
+        height: auto;
+    }
+
+    .profile-image-wrapper {
+        height: 300px;
+        padding: 6px;
+    }
+
+    .quote-container {
+        margin-top: 32px;
+        padding: 0 12px;
+    }
+
+    .button-container {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .about-paragraph {
+        font-size: 0.95rem;
+        line-height: 1.6;
+    }
+}
