@@ -121,13 +121,13 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 0.5rem; /* tighter spacing */
-    padding: 0.4rem 1rem; /* tight vertical and side padding */
-    background-color: rgba(3, 100, 44, 0.65); /* slightly more transparent */
+    gap: 0.5rem; 
+    padding: 0.4rem 1rem;
+    background-color: rgba(3, 100, 44, 0.65); 
     border-radius: 9999px;
     list-style: none;
     margin: 0;
-    font-size: 0.95rem; /* slightly smaller for tighter layout */
+    font-size: 0.95rem; 
     box-shadow: 0 4px 12px rgba(7, 7, 7, 0.2);
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);

@@ -311,8 +311,6 @@ body.contact-page {
 }
 
 /* Responsive Adjustments */
-
-/* Tablets and smaller (up to 768px) */
 @media (max-width: 768px) {
     .contact-card {
         padding: 24px;
@@ -329,13 +327,10 @@ body.contact-page {
     .info-item {
         gap: 12px;
     }
-
-    /* Stack form and info on small devices */
     .contact-content {
         flex-direction: column;
     }
 
-    /* Scale inputs and buttons slightly for touch */
     .form-input,
     .form-textarea,
     .submit-btn,
@@ -344,8 +339,6 @@ body.contact-page {
         padding: 14px 20px;
         border-radius: 16px;
     }
-
-    /* Larger tappable social icons */
     .social-icon {
         padding: 16px;
     }
@@ -355,7 +348,6 @@ body.contact-page {
     }
 }
 
-/* Small phones (up to 480px) */
 @media (max-width: 480px) {
     body.contact-page {
         padding: 12px;
@@ -390,13 +382,11 @@ body.contact-page {
         font-size: 1rem;
     }
 
-    /* Reduce gap in social links */
     .social-icons {
         gap: 12px;
     }
 }
 
-/* Prevent horizontal overflow on really small screens */
 html, body {
     max-width: 100vw;
     overflow-x: hidden;
