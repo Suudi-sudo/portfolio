@@ -90,8 +90,7 @@ body {
     background-color: #166534;
     color: #e0f7e9;
     text-decoration: none;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
-                0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
     transition: background-color 0.3s ease;
 }
 
@@ -99,13 +98,22 @@ body {
     background-color: #15803d;
 }
 
-/* Navbar Container */
+/* Navbar Styling */
 .main-nav {
     position: absolute;
     top: 1.5rem;
     right: 1.5rem;
     z-index: 1000;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Center navbar on small screens only */
+@media (max-width: 767px) {
+    .main-nav {
+        left: 50%;
+        right: auto;
+        transform: translateX(-50%);
+    }
 }
 
 /* Nav List Styling */
@@ -122,15 +130,8 @@ body {
     box-shadow: 0 4px 12px rgba(7, 7, 7, 0.2);
     backdrop-filter: blur(6px);
     -webkit-backdrop-filter: blur(6px);
-   
-    flex-wrap: nowrap; 
-    overflow-x: auto;
-    scrollbar-width: none;
-}
-
-
-.nav-list::-webkit-scrollbar {
-    display: none;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .nav-list li a {
@@ -140,7 +141,6 @@ body {
     border-radius: 9999px;
     transition: background-color 0.3s ease, color 0.3s ease;
     font-weight: 500;
-    white-space: nowrap;
 }
 
 .nav-list li a:hover {
@@ -148,15 +148,6 @@ body {
     color: #d1fae5; 
 }
 
-@media (min-width: 768px) {
-    .nav-list {
-        font-size: 1rem;
-        flex-wrap: nowrap;
-        overflow-x: visible;
-    }
-}
-
-/* nav-link color override */
 .nav-link {
     color: #e0f7e9;
     text-decoration: none;
@@ -165,6 +156,12 @@ body {
 
 .nav-link:hover {
     color: #86efac;
+}
+
+@media (min-width: 768px) {
+    .nav-list {
+        font-size: 1rem;
+    }
 }
 
 /* Animations */
@@ -192,30 +189,4 @@ body {
 
 .animate-glow {
     animation: glow 2s ease-in-out infinite;
-}
-
-/* Responsive Styles */
-@media (max-width: 767px) {
-    .main-nav {
-        top: 1rem;
-        right: 1rem;
-        left: 1rem;
-       
-        width: auto;
-        max-width: 100%;
-    }
-
-    .nav-list {
-        
-        overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
-        padding-left: 1rem;
-        padding-right: 1rem;
-        gap: 1rem;
-    }
-    
-    
-    .nav-list li {
-        flex-shrink: 0; 
-    }
 }
