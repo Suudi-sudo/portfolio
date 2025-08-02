@@ -468,3 +468,71 @@ body {
     }
 }
 
+/* Prevent mobile layout shifting */
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body {
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior-y: contain;
+}
+
+/* Lock viewport scaling */
+@viewport {
+  width: device-width;
+  zoom: 1.0;
+}
+
+/* Mobile-specific stability fixes */
+@media (max-width: 767px) {
+  body {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .about-section {
+    position: relative;
+    min-height: 100vh;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Prevent any animations from causing jumps */
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+  
+  /* Ensure content doesn't shift when scrolling */
+  .about-content-container,
+  .about-text-content,
+  .profile-image-container {
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    perspective: 1000;
+  }
+}
+
+/* For iOS specifically */
+@supports (-webkit-touch-callout: none) {
+  body {
+    /* Prevent elastic scrolling */
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+  
+  .about-section {
+    height: 100%;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+  }
+}
