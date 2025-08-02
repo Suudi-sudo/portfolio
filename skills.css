@@ -1,4 +1,4 @@
-/* Skills Page Styles */
+/*  Page Styles */
 body.skills-page {
     margin: 0;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, 
@@ -189,61 +189,48 @@ body.skills-page {
     font-size: clamp(0.875rem, 2vw, 1rem);
 }
 
-/* Back Home Button */
+/* Back Home Button  */
 .back-home-btn {
+    margin-top: 64px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    z-index: 1100;
     position: fixed;
     left: 0;
     right: 0;
     bottom: 20px;
-    display: flex;
-    justify-content: center;
-    z-index: 50;
     pointer-events: none;
 }
 
 .home-link {
+    padding: 12px 24px;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-weight: 700;
+    text-decoration: none;
+    border-radius: 50px;
+    transition: all 0.3s;
     position: relative;
     overflow: hidden;
-    padding: 12px 24px;
-    border-radius: 9999px;
-    border: 2px solid #dce7eb;
-    color: #e5dfc7;
-    text-decoration: none;
-    font-size: clamp(0.75rem, 3vw, 0.875rem);
-    text-transform: uppercase;
-    font-weight: 700;
-    letter-spacing: 0.1em;
     display: flex;
     align-items: center;
-    gap: 8px;
+    border: 2px solid #6f8890;
+    color: #e5dfc7;
+    background: transparent;
     pointer-events: auto;
-    transition: all 0.3s ease;
-    background-color: rgba(16, 56, 18, 0.7);
-    backdrop-filter: blur(5px);
 }
 
 .home-link:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    background: #6f8890;
+    color: #0a350d;
+    transform: translateY(-4px);
+    box-shadow: 0 20px 25px -5px rgba(0, 255, 153, 0.3), 0 10px 10px -5px rgba(0, 255, 153, 0.1);
 }
 
-.link-bg {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(to right, #dce7eb, #e0ebf1);
-    opacity: 0;
-    z-index: 0;
-    transition: opacity 0.3s ease;
-}
-
-.home-link:hover .link-bg {
-    opacity: 1;
-}
-
-.home-link span,
 .home-link i {
-    position: relative;
-    z-index: 1;
+    margin-right: 8px;
 }
 
 /* Responsive Adjustments */
@@ -264,6 +251,11 @@ body.skills-page {
     
     .skills-category {
         padding: 16px;
+    }
+
+    .back-home-btn {
+        flex-direction: column;
+        align-items: center;
     }
 }
 
@@ -286,4 +278,3 @@ body.skills-page {
         padding: 10px 20px;
     }
 }
-
