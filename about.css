@@ -1,36 +1,49 @@
 /* Base Styles */
 body {
-    margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    background-color: #0b2a11;
-    color: #e7f8d7;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu,
+    Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  background-color: #0b2a11;
+  color: #e7f8d7;
 }
 
-/* About Page CSS - Identical to JSX Styling */
+/* Container */
 .about-section {
   min-height: 100vh;
   width: 100%;
-  background-color: #0b2a11;
-  padding: 40px 16px;
+  padding: 40px 16px 40px 16px;
   display: flex;
   flex-direction: column;
   align-items: center;
   overflow-x: hidden;
 }
 
-/* Title Styles */
+/* Title */
 .about-title {
-  font-size: 2.25rem;
-  font-weight: 800;
+  font-size: 2.25rem; /* 36px */
+  font-weight: 800; /* Extra bold */
   letter-spacing: -0.025em;
-  color: #e7f8d7;
-  margin-bottom: 48px;
+  margin-bottom: 3rem; /* 48px */
   margin-top: 16px;
   text-align: center;
   opacity: 0;
+  color: #e7f8d7;
+  user-select: none;
 }
 
-/* Content Container */
+/* Responsive Title Sizes */
+@media (min-width: 640px) {
+  .about-title {
+    font-size: 3rem; /* 48px */
+  }
+}
+@media (min-width: 768px) {
+  .about-title {
+    font-size: 3.75rem; /* 60px */
+  }
+}
+
+/* Content Container: Mobile stacked, desktop side-by-side */
 .about-content-container {
   width: 100%;
   max-width: 1150px;
@@ -38,49 +51,86 @@ body {
   flex-direction: column-reverse;
   justify-content: space-between;
   align-items: center;
-  gap: 40px;
+  gap: 2.5rem; /* 40px */
 }
 
-/* Text Content */
+/* On desktop, arrange side by side */
+@media (min-width: 768px) {
+  .about-content-container {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+}
+
+/* Left panel: Text */
 .about-text-content {
   flex: 1;
   color: #b8e6c7;
   opacity: 0;
-  padding: 0 4px;
+  padding-left: 4px;
+  padding-right: 4px;
 }
 
+/* Slightly more padding on small screens */
+@media (min-width: 640px) {
+  .about-text-content {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+}
+
+/* Subtitle / Section header */
 .about-subtitle {
-  font-size: 1.5rem;
+  font-size: 1.5rem; /* 24px */
   font-weight: 700;
-  color: #b8e6c7;
-  margin-bottom: 16px;
+  color: #758575; /* You can adjust this grey (#b8e6c7 was too bright for subtitle) */
+  margin-bottom: 1rem; /* 16px */
 }
 
+/* Slightly bigger subtitle on small screens */
+@media (min-width: 640px) {
+  .about-subtitle {
+    font-size: 1.875rem; /* 30px */
+    margin-bottom: 1.5rem; /* 24px */
+  }
+}
+
+/* Paragraph text */
 .about-paragraph {
-  margin-bottom: 20px;
+  margin-bottom: 1.25rem; /* 20px */
   line-height: 1.75;
   font-size: 1rem;
   color: #d0e8c2;
   letter-spacing: 0.025em;
 }
 
-/* Skills */
+/* Larger paragraphs on small screens */
+@media (min-width: 640px) {
+  .about-paragraph {
+    font-size: 1.125rem;
+    line-height: 1.8;
+  }
+}
+
+/* Skills container */
 .skills-container {
   display: flex;
   flex-wrap: wrap;
-  gap: 12px;
-  margin-bottom: 40px;
+  gap: 0.75rem; /* 12px */
+  margin-bottom: 2.5rem; /* 40px */
 }
 
+/* Skill tags */
 .skill-tag {
-  padding: 8px 16px;
+  padding: 0.5rem 1rem;
   border-radius: 9999px;
   background-color: #254e28;
   color: #e7f8d7;
   font-size: 0.875rem;
   font-weight: 500;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-  transition: transform 0.2s, background-color 0.2s;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+  cursor: default;
 }
 
 .skill-tag:hover {
@@ -88,29 +138,37 @@ body {
   background-color: #2e5f31;
 }
 
-/* Education */
+/* Education Section */
 .education-title {
-  font-size: 1.25rem;
+  font-size: 1.25rem; /* 20px */
   font-weight: 600;
   color: #a5d6a7;
-  margin-bottom: 20px;
+  margin-bottom: 1.25rem; /* 20px */
+}
+
+@media (min-width: 640px) {
+  .education-title {
+    font-size: 1.5rem; /* 24px */
+  }
 }
 
 .education-container {
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 1.5rem; /* 24px */
 }
 
+/* Glow card style */
 .glow-card {
   position: relative;
   background: #1a3a17;
   border-radius: 12px;
   border: 1.5px solid #224c2c;
-  box-shadow: 0 1.5px 8px 0 rgba(0, 60, 0, 0.13);
+  box-shadow: 0 1.5px 8px rgba(0, 60, 0, 0.13);
   padding: 1.5rem;
   transition: box-shadow 0.4s ease, transform 0.3s ease;
   overflow: visible;
+  cursor: default;
 }
 
 .glow-card::after {
@@ -131,45 +189,70 @@ body {
 
 .glow-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 4px 32px 0 rgba(102, 255, 204, 0.13), 0 1.5px 8px 0 rgba(0, 60, 0, 0.13);
+  box-shadow: 0 4px 32px rgba(102, 255, 204, 0.13), 0 1.5px 8px rgba(0, 60, 0, 0.13);
 }
 
 .glow-card:hover::after {
   opacity: 1;
 }
 
+/* Education header */
 .education-header {
   display: flex;
   justify-content: space-between;
   font-weight: 600;
   color: #a5d6a7;
-  margin-bottom: 8px;
+  margin-bottom: 0.5rem; /* 8px */
   font-size: 1rem;
 }
 
+@media (min-width: 640px) {
+  .education-header {
+    font-size: 1.125rem;
+  }
+}
+
+/* Education date */
 .education-date {
   color: #e7f8d7;
   font-weight: 400;
 }
 
+/* Education description */
 .education-description {
   color: #b8e6c7;
   font-size: 0.875rem;
   line-height: 1.75;
 }
 
-/* Profile Image */
+@media (min-width: 640px) {
+  .education-description {
+    font-size: 1rem;
+  }
+}
+
+/* Right panel: Profile Image */
 .profile-image-container {
   flex: 1;
   display: flex;
   justify-content: center;
   align-items: center;
   opacity: 0;
-  padding: 0 8px;
+  padding-left: 8px;
+  padding-right: 8px;
   max-width: 350px;
   width: 100%;
 }
 
+/* More padding on small screens */
+@media (min-width: 640px) {
+  .profile-image-container {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+
+/* Profile image wrapper */
 .profile-image-wrapper {
   position: relative;
   border-radius: 45% 55% 60% 40% / 60% 35% 65% 40%;
@@ -184,15 +267,25 @@ body {
   border: 3px solid #2e5f31;
 }
 
+/* Taller image for larger screens */
+@media (min-width: 640px) {
+  .profile-image-wrapper {
+    height: 360px;
+  }
+}
+
+/* Actual profile image */
 .profile-image {
   object-fit: cover;
   width: 100%;
   height: 100%;
   border-radius: 45% 55% 60% 40% / 60% 35% 65% 40%;
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+    0 10px 10px -5px rgba(0, 0, 0, 0.04);
   filter: brightness(1.08) grayscale(0.12);
 }
 
+/* Profile tag badges */
 .profile-tag {
   position: absolute;
   background-color: #153b1a;
@@ -202,14 +295,15 @@ body {
   border-radius: 9999px;
   font-weight: 600;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  user-select: none;
 }
 
-.profile-tag.top-left {
+.top-left {
   top: 16px;
   left: 24px;
 }
 
-.profile-tag.bottom-right {
+.bottom-right {
   bottom: 16px;
   right: 24px;
 }
@@ -220,13 +314,14 @@ body {
   right: 16px;
 }
 
-/* Quote & Buttons */
+/* Quote & Buttons Container */
 .quote-container {
   width: 100%;
-  max-width: 80rem;
-  margin-top: 56px;
+  max-width: 80rem; /* ~1280px */
+  margin-top: 3.5rem; /* 56px */
   text-align: center;
-  padding: 0 16px;
+  padding-left: 16px;
+  padding-right: 16px;
 }
 
 .quote-text {
@@ -235,29 +330,54 @@ body {
   font-style: italic;
   color: #e7f8d7;
   font-size: 1rem;
-  margin-bottom: 40px;
+  margin-bottom: 2.5rem; /* 40px */
   max-width: 65ch;
   margin-left: auto;
   margin-right: auto;
 }
 
+@media (min-width: 640px) {
+  .quote-text {
+    padding-left: 24px;
+    font-size: 1.125rem;
+  }
+}
+
+/* Buttons Container */
 .button-container {
   display: flex;
   justify-content: center;
-  gap: 16px;
+  gap: 1rem; /* 16px */
   flex-wrap: wrap;
 }
 
+@media (min-width: 640px) {
+  .button-container {
+    gap: 1.5rem; /* 24px */
+  }
+}
+
+/* Buttons */
 .button {
   padding: 12px 24px;
   border-radius: 9999px;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
   font-weight: 600;
   text-decoration: none;
   display: inline-block;
+  cursor: pointer;
+  user-select: none;
 }
 
+@media (min-width: 640px) {
+  .button {
+    padding: 12px 32px;
+  }
+}
+
+/* Home button */
 .home-button {
   background-color: #254e28;
   color: #e7f8d7;
@@ -265,9 +385,11 @@ body {
 
 .home-button:hover {
   background-color: #193c22;
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+    0 10px 10px -5px rgba(0, 0, 0, 0.04);
 }
 
+/* Contact button */
 .contact-button {
   background-color: #7ecb8f;
   color: #153b1a;
@@ -275,26 +397,13 @@ body {
 
 .contact-button:hover {
   background-color: #99e2b4;
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+    0 10px 10px -5px rgba(0, 0, 0, 0.04);
 }
 
 /* Animations */
 .opacity-0 {
   opacity: 0;
-}
-
-.slide-down {
-  animation: slideDown 0.8s ease forwards;
-}
-
-.slide-left {
-  animation: slideLeft 0.8s ease forwards;
-  animation-delay: 0.3s;
-}
-
-.slide-right {
-  animation: slideRight 0.8s ease forwards;
-  animation-delay: 0.3s;
 }
 
 @keyframes slideDown {
@@ -307,6 +416,9 @@ body {
     transform: translateY(0);
   }
 }
+.slide-down {
+  animation: slideDown 0.8s ease forwards;
+}
 
 @keyframes slideLeft {
   0% {
@@ -317,6 +429,10 @@ body {
     opacity: 1;
     transform: translateX(0);
   }
+}
+.slide-left {
+  animation: slideLeft 0.8s ease forwards;
+  animation-delay: 0.3s;
 }
 
 @keyframes slideRight {
@@ -329,68 +445,7 @@ body {
     transform: translateX(0);
   }
 }
-
-/* Responsive Styles */
-@media (min-width: 640px) {
-  .about-title {
-    font-size: 3rem;
-  }
-  
-  .about-text-content {
-    padding: 0 8px;
-  }
-  
-  .about-subtitle {
-    font-size: 1.875rem;
-    margin-bottom: 24px;
-  }
-  
-  .about-paragraph {
-    font-size: 1.125rem;
-    line-height: 1.8;
-  }
-  
-  .education-title {
-    font-size: 1.5rem;
-  }
-  
-  .education-header {
-    font-size: 1.125rem;
-  }
-  
-  .education-description {
-    font-size: 1rem;
-  }
-  
-  .profile-image-container {
-    padding: 0 16px;
-  }
-  
-  .profile-image-wrapper {
-    height: 360px;
-  }
-  
-  .quote-text {
-    padding-left: 24px;
-    font-size: 1.125rem;
-  }
-  
-  .button-container {
-    gap: 24px;
-  }
-  
-  .button {
-    padding: 12px 32px;
-  }
-}
-
-@media (min-width: 768px) {
-  .about-title {
-    font-size: 3.75rem;
-  }
-  
-  .about-content-container {
-    flex-direction: row;
-    align-items: flex-start;
-  }
+.slide-right {
+  animation: slideRight 0.8s ease forwards;
+  animation-delay: 0.3s;
 }
