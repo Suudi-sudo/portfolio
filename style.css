@@ -107,7 +107,7 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* Center navbar on small screens only */
+
 @media (max-width: 767px) {
     .main-nav {
         left: 50%;
@@ -121,12 +121,12 @@ body {
     display: flex;
     align-items: center;
     gap: 0.75rem; 
-    background-color: rgba(5, 46, 22, 0.85);
+    background-color: rgba(3, 100, 44, 0.85);
     padding: 0.5rem 1.25rem; 
     border-radius: 9999px;
     list-style: none;
     margin: 0;
-    font-size: 0.9rem;
+    font-size: 10rem;
     box-shadow: 0 4px 12px rgba(7, 7, 7, 0.2);
     backdrop-filter: blur(6px);
     -webkit-backdrop-filter: blur(6px);
