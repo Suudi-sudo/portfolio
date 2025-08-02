@@ -120,28 +120,29 @@ body {
 .nav-list {
     display: flex;
     align-items: center;
-    gap: 0.75rem; 
-    background-color: rgba(3, 100, 44, 0.85);
-    padding: 0.5rem 1.25rem; 
+    justify-content: center;
+    gap: 0.5rem; /* tighter spacing */
+    padding: 0.4rem 1rem; /* tight vertical and side padding */
+    background-color: rgba(3, 100, 44, 0.65); /* slightly more transparent */
     border-radius: 9999px;
     list-style: none;
     margin: 0;
-    font-size: 1.0rem;
+    font-size: 0.95rem; /* slightly smaller for tighter layout */
     box-shadow: 0 4px 12px rgba(7, 7, 7, 0.2);
-    backdrop-filter: blur(6px);
-    -webkit-backdrop-filter: blur(6px);
-    justify-content: center;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
     flex-wrap: nowrap;
 }
 
 .nav-list li a {
+    padding: 0.4rem 0.6rem;
     text-decoration: none;
     color: #ffffff;
-    padding: 0.5rem 0.75rem;
     border-radius: 9999px;
     transition: background-color 0.3s ease, color 0.3s ease;
     font-weight: 500;
 }
+
 
 .nav-list li a:hover {
     background-color: rgba(255, 255, 255, 0.15);
