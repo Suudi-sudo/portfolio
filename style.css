@@ -126,7 +126,7 @@ body {
     border-radius: 9999px;
     list-style: none;
     margin: 0;
-    font-size: 10rem;
+    font-size: 1.0rem;
     box-shadow: 0 4px 12px rgba(7, 7, 7, 0.2);
     backdrop-filter: blur(6px);
     -webkit-backdrop-filter: blur(6px);
